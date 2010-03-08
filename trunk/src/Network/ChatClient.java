@@ -1,6 +1,5 @@
 package Network;
 
-
 import java.util.*;
 import java.io.*;
 
@@ -12,8 +11,8 @@ import org.jivesoftware.smack.packet.*;
  * idea, connect to a running bot, i.e. the server bot it pairs the participants and thats all
  * i.e. if num of chats > 1 and a new chat then send the names to each of the two chatters.
  */
-
 public class ChatClient implements MessageListener, PacketListener, MoveListener {
+
 	private String master = "siberiachess@duke.cs.drexel.edu";
 	private XMPPConnection connection;
 	private String partner = null;
@@ -22,9 +21,11 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 	public ChatClient() {
 		observers = new LinkedList<MoveListener>();
 	}
-        public String getParter(){
-            return partner;
-        }
+
+	public String getParter() {
+		return partner;
+	}
+
 	public boolean send(String move) {
 		boolean retval = true;
 		try {
@@ -34,6 +35,7 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 		}
 		return retval;
 	}
+
 	public void addListener(MoveListener ml) {
 		if (ml != null) {
 			observers.add(ml);
@@ -92,22 +94,22 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 					e.printStackTrace();
 				}
 			} else {
-				this.partner = m.getBody() + "@duke.cs.drexel.edu";
-				System.err.println("Partner is now: " + partner);
-				try {
-					this.sendMessage("Hey I can talk to you", this.partner);
-				} catch (XMPPException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				if (!m.getBody().equals("POSITION:WHITE")) {
+					this.partner = m.getBody() + "@duke.cs.drexel.edu";
+					System.err.println("Partner is now: " + partner);
+					try {
+						this.sendMessage("Hey I can talk to you", this.partner);
+					} catch (XMPPException e) {
+						e.printStackTrace();
+					}
+				} else {
+					this.notifyObservers(m.getBody());
 				}
 			}
 		} else {
 			if (from.equals(this.partner)) {
-				System.out.println("NetworkPlayer will recieve this in a few seconds: " +m.getBody());
 				this.notifyObservers(m.getBody());
 			}
-			// /System.err.println("Someone else(" + m.getFrom() + ") said: " +
-			// m.getBody());
 		}
 	}
 
@@ -150,7 +152,6 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 	@Override
 	public void move(String move) {
 		System.out.println(move);
-		
-	}
 
+	}
 }

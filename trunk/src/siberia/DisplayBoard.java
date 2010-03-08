@@ -20,7 +20,7 @@ public class DisplayBoard extends JLayeredPane{
 		controller = pc;
 		board = new Board(pc,pc.getWhite().equals(ca));
 		board.setBounds(0,0,544,544);
-		DragBoard db = new DragBoard(board,ca,pc.getWhite().equals(ca));
+		DragBoard db = new DragBoard(board,ca,pc);
 		db.setBounds(0,0,544,544);
 		board.setDragBoard(db);
 

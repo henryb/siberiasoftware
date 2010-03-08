@@ -60,6 +60,7 @@ public class Resolver implements MessageListener, ChatManagerListener {
                     System.out.println(first + "   " + second);
                     c.sendMessage(second);
                     chat.sendMessage(first);
+					chat.sendMessage("POSITION:WHITE");
 
                 } catch (XMPPException e) {
                     // TODO Auto-generated catch block
