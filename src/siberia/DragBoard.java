@@ -25,10 +25,10 @@ public class DragBoard extends JPanel implements MouseListener, MouseMotionListe
 	private JLabel imageLabel;
 	private ChessApplet applet;
 	private Icon old;
-	private boolean white;
+	private PlayerController pc;
 
-	public DragBoard(Board brd, ChessApplet ca, boolean w) {
-		white = w;
+	public DragBoard(Board brd, ChessApplet ca, PlayerController w) {
+		pc = w;
 		board = brd;
 		start = null;
 		imageLabel = new JLabel();
@@ -86,7 +86,7 @@ public class DragBoard extends JPanel implements MouseListener, MouseMotionListe
 		Object source = e.getSource();
 		if (source instanceof BoardLocation) {
 			BoardLocation bl = (BoardLocation) source;
-			if (bl.getPiece() != null && (bl.getPiece().color.equals("white") == white)) {
+			if (bl.getPiece() != null && (bl.getPiece().color.equals("white") == pc.getWhite().equals(applet))) {
 
 				start = bl;
 				old = start.getIcon();

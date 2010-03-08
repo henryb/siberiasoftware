@@ -32,6 +32,11 @@ public class NetworkPlayer implements Player,MoveListener{
     }
 
     public void move(String move) {
-        pc.makeMove(this, move);
+		
+		if(move.equals("POSITION:WHITE")){
+			pc.setWhitePlayer(this);
+		} else {
+			pc.makeMove(this, move);
+		}
     }
 }

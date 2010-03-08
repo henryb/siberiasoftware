@@ -12,6 +12,7 @@ public class Board extends JPanel {
 	private BoardLocation[][] board;
 	private PlayerController controller;
 	private Image img;
+	private boolean status;
 
 	public Board(PlayerController pc, boolean white) {
 		this.setLayout(new GridLayout(8, 8));
@@ -26,7 +27,7 @@ public class Board extends JPanel {
 			}
 		}
 		img = new ImageIcon("/home/tradams/NetBeansProjects/SiberiaSoftware/resources/board.jpg").getImage();
-
+		status = white;
 
 	}
 
@@ -42,16 +43,22 @@ public class Board extends JPanel {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				board[i][j].addActionListener(db);
-				//board[i][j].addMouseListener(db);
-				//board[i][j].addMouseMotionListener(db);
 			}
 		}
 	}
 
 	public void update(boolean white) {
+		if (status != white) {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					int ni = (white) ? i : 7 - i;
+					int nj = (white) ? j : 7 - j;
+					board[i][j].setLoc(ni,nj);
+				}
+			}
+		}
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-
 				int ni = (white) ? i : 7 - i;
 				int nj = (white) ? j : 7 - j;
 				board[i][j].setPiece(controller.getBoard().getPieceAt(ni, nj));
