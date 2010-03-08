@@ -1,3 +1,6 @@
+package Network;
+
+
 import java.util.*;
 import java.io.*;
 
@@ -19,7 +22,18 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 	public ChatClient() {
 		observers = new LinkedList<MoveListener>();
 	}
-
+        public String getParter(){
+            return partner;
+        }
+	public boolean send(String move) {
+		boolean retval = true;
+		try {
+			this.sendMessage(move, this.master);
+		} catch (XMPPException e) {
+			retval = false;
+		}
+		return retval;
+	}
 	public void addListener(MoveListener ml) {
 		if (ml != null) {
 			observers.add(ml);
@@ -89,6 +103,7 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 			}
 		} else {
 			if (from.equals(this.partner)) {
+				System.out.println("NetworkPlayer will recieve this in a few seconds: " +m.getBody());
 				this.notifyObservers(m.getBody());
 			}
 			// /System.err.println("Someone else(" + m.getFrom() + ") said: " +
