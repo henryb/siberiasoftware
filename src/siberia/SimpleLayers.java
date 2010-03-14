@@ -9,7 +9,9 @@ import javax.swing.*;
 import java.awt.Color;
 
 public class SimpleLayers extends JFrame {
-  public SimpleLayers() {
+	private static final long serialVersionUID = 1L;
+
+public SimpleLayers() {
     super("LayeredPane Demonstration");
     setSize(200, 150);
     setDefaultCloseOperation(EXIT_ON_CLOSE);

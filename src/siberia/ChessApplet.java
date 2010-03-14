@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 public class ChessApplet extends JApplet implements  Player, ActionListener {
 
+	private static final long serialVersionUID = 1L;
 	private JLayeredPane layers;
 	private DisplayBoard dboard;
 	private StatusPanel status;
