@@ -7,7 +7,8 @@ import javax.swing.JPanel;
 
 public class StatusPanel extends JPanel {
 
-    private PlayerController controller;
+	private static final long serialVersionUID = 1L;
+	private PlayerController controller;
     private JLabel checkWhite;
     private JLabel checkBlack;
     public StatusPanel(PlayerController pc) {

@@ -1,4 +1,6 @@
-package Siberia;
+package siberia;
+
+import siberia.pieces.*;
 
 
 public class ChessBoard {

@@ -12,6 +12,7 @@ import javax.swing.JLayeredPane;
  * @author tradams
  */
 public class DisplayBoard extends JLayeredPane{
+	private static final long serialVersionUID = 1L;
 	private Board board;
 	private ChessApplet applet;
 	private PlayerController controller;

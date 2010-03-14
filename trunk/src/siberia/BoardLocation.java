@@ -6,7 +6,9 @@ import javax.swing.JButton;
 import siberia.pieces.ChessPiece;
 
 public class BoardLocation extends JButton {
-    private ChessPiece piece;
+
+	private static final long serialVersionUID = 1L;
+	private ChessPiece piece;
     private int m_x, m_y;
     public BoardLocation(Board brd, int x, int y) {
         this.m_x = x;

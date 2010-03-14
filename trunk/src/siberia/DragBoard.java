@@ -20,6 +20,7 @@ import javax.swing.JPanel;
  */
 public class DragBoard extends JPanel implements MouseListener, MouseMotionListener, ActionListener {
 
+	private static final long serialVersionUID = 1L;
 	private BoardLocation start;
 	private Board board;
 	private JLabel imageLabel;
