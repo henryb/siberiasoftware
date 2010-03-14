@@ -1,11 +1,21 @@
 package siberia.tests;
 
+import org.jivesoftware.smack.*;
+import org.jivesoftware.smack.packet.Message;
+
 import junit.framework.TestCase;
+import Network.Resolver;
 
 public class ResolverTest extends TestCase {
+	
+	private Resolver subject;
+	private Chat chat;
+	private Message message;
 
 	protected void setUp() throws Exception {
 		super.setUp();
+		subject = new Resolver();
+		
 	}
 
 	protected void tearDown() throws Exception {
@@ -13,23 +23,29 @@ public class ResolverTest extends TestCase {
 	}
 
 	public final void testResolver() {
-		fail("Not yet implemented"); // TODO
+		
+		assertNotNull(subject);
+		
 	}
 
 	public final void testConnected() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(subject.connected());
 	}
 
 	public final void testProcessMessage() {
-		fail("Not yet implemented"); // TODO
+		chat = null;
+		message = new Message("chat message", Message.Type.chat);
+		subject.processMessage(chat, message);
+		assert(true);
 	}
 
 	public final void testChatCreated() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	public final void testMain() {
-		fail("Not yet implemented"); // TODO
+		chat = null;
+		boolean local = true;
+		subject.chatCreated(chat, local);
+		local = false;
+		subject.chatCreated(chat, local);
+		assert(true);
 	}
 
 }
