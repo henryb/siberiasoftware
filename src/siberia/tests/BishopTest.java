@@ -20,15 +20,13 @@ public class BishopTest {
 		
 		board_at_start = new int[8][8];
 		
+		// 0 corresponds to empty space
 		board_at_start[0] = new int[]{10,12,13,9,8,13,12,11};
 		board_at_start[1] = new int[]{14,14,14,14,14,14,14,14};
-		
-		// 0 corresponds to empty space
-		for(int i = 2; i <= 5; i++){
-			for(int j = 0; j < board_at_start[i].length; j++){
-				board_at_start[i][j] = 0;			
-			}
-		}
+		board_at_start[2] = new int[]{0,0,0,0,0,0,0,0};
+		board_at_start[3] = new int[]{0,0,0,0,0,0,0,0};
+		board_at_start[4] = new int[]{0,0,0,0,0,0,0,0};
+		board_at_start[5] = new int[]{0,0,0,0,0,0,0,0};
 		board_at_start[6] = new int[]{7,7,7,7,7,7,7,7};
 		board_at_start[7] = new int[]{3,5,6,2,1,6,5,4};
 		
@@ -36,13 +34,10 @@ public class BishopTest {
 		
 		board_in_game[0] = new int[]{10,12,13,9,8,13,12,11};
 		board_in_game[1] = new int[]{14,14,14,14,14,14,14,14};
-		
-		// 0 corresponds to empty space
-		for(int i = 2; i <= 5; i++){
-			for(int j = 0; j < board_in_game[i].length; j++){
-				board_in_game[i][j] = 0;			
-			}
-		}
+		board_in_game[2] = new int[]{0,0,0,0,0,0,0,0};
+		board_in_game[3] = new int[]{0,0,0,0,0,0,0,0};
+		board_in_game[4] = new int[]{0,0,0,0,0,0,0,0};
+		board_in_game[5] = new int[]{0,0,0,0,0,0,0,0};
 		board_in_game[6] = new int[]{7,0,7,7,7,7,7,7};
 		board_in_game[7] = new int[]{3,5,6,2,1,6,5,4};
 	}
