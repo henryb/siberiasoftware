@@ -24,8 +24,8 @@ public class BishopTest {
 	@Test
 	public final void testVerify_move_valid() {
 		int[][] board = {};
-		int[] position = {};
-		int[] next = {};
+		int[] position = {7, 1};
+		int[] next = {5, 2};
 		
 		assertTrue(subject.verify_move(board, position, next));
 	}
@@ -33,8 +33,8 @@ public class BishopTest {
 	@Test
 	public final void testVerify_move_invalid() {
 		int[][] board = {};
-		int[] position = {};
-		int[] next = {};
+		int[] position = {1,1};
+		int[] next = {-1, -1};
 		
 		assertFalse(subject.verify_move(board, position, next));
 	}
