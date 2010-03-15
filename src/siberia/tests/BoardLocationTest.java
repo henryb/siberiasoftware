@@ -6,10 +6,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import siberia.Board;
+import siberia.BoardLocation;
+import siberia.pieces.*;
+
 public class BoardLocationTest {
+	
+	private BoardLocation subject;
+	private ChessPiece piece;
+	private Board board;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		board = null;
+		subject = new BoardLocation(board, 0, 0);
 	}
 
 	@After
@@ -17,53 +28,46 @@ public class BoardLocationTest {
 	}
 
 	@Test
-	public final void testIsBorderPainted() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testIsContentAreaFilled() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
 	public final void testBoardLocation() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(subject);
 	}
 
 	@Test
 	public final void testSetLoc() {
-		fail("Not yet implemented"); // TODO
+		subject.setLoc(5, 2);
+		assertEquals(5, subject.getLocationX());
+		assertEquals(2, subject.getLocationY());
 	}
 
 	@Test
 	public final void testGetLocationX() {
-		fail("Not yet implemented"); // TODO
+		subject = new BoardLocation(board, 5, 2);
+		assertEquals(5, subject.getLocationX());
 	}
 
 	@Test
 	public final void testGetLocationY() {
-		fail("Not yet implemented"); // TODO
+		subject = new BoardLocation(board, 5, 2);
+		assertEquals(2, subject.getLocationY());
 	}
 
 	@Test
 	public final void testGetPiece() {
-		fail("Not yet implemented"); // TODO
+		assertNull(subject.getPiece());
+		
 	}
 
 	@Test
 	public final void testSetPiece() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetText() {
-		fail("Not yet implemented"); // TODO
+		piece = new Pawn("white", "../../resources/whitepawn.jpg");
+		subject.setPiece(piece);
+		assertEquals(piece, subject.getPiece());
 	}
 
 	@Test
 	public final void testToString() {
-		fail("Not yet implemented"); // TODO
+		subject = new BoardLocation(board, 5, 2);
+		assertEquals("5 2", subject.toString());
 	}
 
 }
