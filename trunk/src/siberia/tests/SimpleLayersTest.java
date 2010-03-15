@@ -1,21 +1,27 @@
 package siberia.tests;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class SimpleLayersTest extends TestCase {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-	protected void setUp() throws Exception {
-		super.setUp();
+public class SimpleLayersTest {
+
+	@Before
+	public void setUp() throws Exception {
 	}
 
-	protected void tearDown() throws Exception {
-		super.tearDown();
+	@After
+	public void tearDown() throws Exception {
 	}
 
+	@Test
 	public final void testSimpleLayers() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testMain() {
 		fail("Not yet implemented"); // TODO
 	}
