@@ -6,10 +6,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import siberia.ChessBoard;
+import siberia.PlayerController;
+
 public class PlayerControllerTest {
 
+	private PlayerController subject;
+	
 	@Before
 	public void setUp() throws Exception {
+		subject = new PlayerController();
 	}
 
 	@After
@@ -18,12 +24,13 @@ public class PlayerControllerTest {
 
 	@Test
 	public final void testRun() {
-		fail("Not yet implemented"); // TODO
+		subject.run();
+		assert(true);
 	}
 
 	@Test
 	public final void testPlayerController() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(subject);
 	}
 
 	@Test
@@ -33,7 +40,9 @@ public class PlayerControllerTest {
 
 	@Test
 	public final void testGetBoard() {
-		fail("Not yet implemented"); // TODO
+		ChessBoard board = new ChessBoard();
+		board.configureBoard();
+		assertSame(board.getClass(), subject.getBoard().getClass());		
 	}
 
 	@Test

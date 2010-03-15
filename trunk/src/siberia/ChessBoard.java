@@ -303,10 +303,10 @@ public class ChessBoard {
 			int[] startPos = lastMove[0];
 			int[] endPos = lastMove[1];
 
-			String startRow = Integer.toString(startPos[1]);
-			String startCol = Integer.toString(startPos[2]);
-			String endRow = Integer.toString(endPos[1]);
-			String endCol = Integer.toString(endPos[2]);
+			String startRow = Integer.toString(startPos[0]);
+			String startCol = Integer.toString(startPos[1]);
+			String endRow = Integer.toString(endPos[0]);
+			String endCol = Integer.toString(endPos[1]);
 			
 			String formatted = startRow + " " + startCol + " " + endRow + " " + endCol;
 			return formatted;
