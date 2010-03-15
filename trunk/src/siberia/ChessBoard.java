@@ -22,20 +22,20 @@ public class ChessBoard {
 			lastMove = new int[][]{{0,0}, {0,0}};
 			
 			gamePieces = new ChessPiece[15];
-			gamePieces[1] = new King("white");
-			gamePieces[2] = new Queen("white");
-			gamePieces[3] = new Rook("white");
-			gamePieces[4] = new Rook("white");
-			gamePieces[5] = new Knight("white");
-			gamePieces[6] = new Bishop("white");
-			gamePieces[7] = new Pawn("white");
-			gamePieces[8] = new King("black");
-			gamePieces[9] = new Queen("black");
-			gamePieces[10] = new Rook("black");
-			gamePieces[11] = new Rook("black");
-			gamePieces[12] = new Knight("black");
-			gamePieces[13] = new Bishop("black");
-			gamePieces[14] = new Pawn("black");
+			gamePieces[1] = new King("white", "../../resources/whiteking.jpg");
+			gamePieces[2] = new Queen("white", "../../resources/whitequeen.jpg");
+			gamePieces[3] = new Rook("white", "../../resources/whiterook.jpg");
+			gamePieces[4] = new Rook("white", "../../resources/whiterook.jpg");
+			gamePieces[5] = new Knight("white", "../../resources/whiteknifht.jpg");
+			gamePieces[6] = new Bishop("white", "../../resources/whitebishop.jpg");
+			gamePieces[7] = new Pawn("white", "../../resources/whitepawn.jpg");
+			gamePieces[8] = new King("black", "../../resources/blackking.jpg");
+			gamePieces[9] = new Queen("black", "../../resources/blackqueen.jpg");
+			gamePieces[10] = new Rook("black", "../../resources/blackrook.jpg");
+			gamePieces[11] = new Rook("black", "../../resources/blackrook.jpg");
+			gamePieces[12] = new Knight("black", "../../resources/blackknight.jpg");
+			gamePieces[13] = new Bishop("black", "../../resources/blackbishop.jpg");
+			gamePieces[14] = new Pawn("black", "../../resources/blackpawn.jpg");
 			
 		}
 		
@@ -332,6 +332,21 @@ public class ChessBoard {
 				return true;
 			}
 		}
+
+        public int[][] stringToMove(String move) {
+
+            String[] tokens = move.split("[ ]");
+            int startRow = Integer.parseInt(tokens[0]);
+            int startCol = Integer.parseInt(tokens[1]);
+            int endRow = Integer.parseInt(tokens[2]);
+            int endCol = Integer.parseInt(tokens[3]);
+
+            int[] startPos = new int[]{startRow, startCol};
+            int[] endPos = new int[]{endRow, endCol};
+            int[][] ret = {startPos, endPos};
+            return ret;
+        }
+
 		
 		public Boolean isGarbled( String move ){
 			

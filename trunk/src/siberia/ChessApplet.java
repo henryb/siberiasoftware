@@ -71,7 +71,8 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 		boolean garbled = pc.getBoard().isGarbled(move);
 		if (!garbled) {
 			int[][] movei = pc.getBoard().stringToMove(move);
-			boolean success = pc.getBoard().validateMove(movei[0], movei[1]);
+			String color = pc.getWhite().equals(this)?"white":"black";
+			boolean success = pc.getBoard().validateMove(movei[0], movei[1], color);
 			if (!success) {
 				JOptionPane.showMessageDialog(this, "You may be retarded, what makes you think that move is valid?");
 			} else {
