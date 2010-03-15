@@ -1,0 +1,445 @@
+
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>doesMoveCauseCheck - Mar 15, 2010 1:48:33 AM - CodeCover Report</title>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
+</head>
+<body>
+    <div class="headline">
+        Coverage Report
+    </div>
+    <div class="session">
+        Mar 15, 2010 1:48:33 AM
+    </div>
+    <div class="sessionDate">
+        measured on March 15, 2010 1:48:33 AM EDT
+    </div>
+    <div class="linkToTop">
+          <a href="../../../../codecover_report.xml">
+              up to the title page
+          </a>
+    </div>
+    <div class="ancestors">
+    <a href="../../index.html">
+        siberia</a>
+    .
+    <a href="../index.html">
+        ChessBoard</a>
+    .
+    doesMoveCauseCheck
+    </div><div class="methodInfo">
+    <table class="methodInfo">
+    <thead class="methodInfo">
+        <tr class="methodInfo">
+            <th class="methodInfo firstcolumn"></th>
+            <th class="methodInfo" colspan="3">Statement Coverage</th>
+            <th class="methodInfo" colspan="3">Branch Coverage</th>
+            <th class="methodInfo" colspan="3">Loop Coverage</th>
+            <th class="methodInfo" colspan="3">Strict Condition Coverage</th>
+            <th class="methodInfo" colspan="3">Synchronized Coverage</th>
+            <th class="methodInfo" colspan="3">?-Operator Coverage</th>
+        </tr>
+    </thead>
+    <tbody class="methodInfo">
+        <tr class="methodInfo">
+            <td class="methodInfo firstcolumn">
+                    private boolean doesMoveCauseCheck(int[] current, int[] next, String color)
+            </td>  
+                                    <td class="methodInfo">
+                        6&nbsp;/&nbsp;8
+                </td>
+                <td class="methodInfo">
+                        75&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:75%"></div></div>
+                </td>   
+                                                <td class="methodInfo">
+                        2&nbsp;/&nbsp;6
+                </td>
+                <td class="methodInfo">
+                        33&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:33%"></div></div>
+                </td>   
+                                                <td class="methodInfo">
+                        2&nbsp;/&nbsp;6
+                </td>
+                <td class="methodInfo">
+                        33&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:33%"></div></div>
+                </td>   
+                                                <td class="methodInfo">
+                        2&nbsp;/&nbsp;7
+                </td>
+                <td class="methodInfo">
+                        28&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:28%"></div></div>
+                </td>   
+                                            <td class="methodInfo">
+                        0&nbsp;/&nbsp;0
+                </td>
+                <td class="methodInfo">
+                        ---
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="grey"></div>
+                </td>  
+                                            <td class="methodInfo">
+                        0&nbsp;/&nbsp;0
+                </td>
+                <td class="methodInfo">
+                        ---
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="grey"></div>
+                </td>  
+                        </tr>
+    </tbody>
+    </table></div>
+    <div class="code">
+    <table class="code">
+        <thead class="code">
+        <tr class="code">
+                        <th class="code" colspan="3">ChessBoard.java</th>
+                </tr>
+        </thead>
+        <tbody class="code">
+                      <tr class="code" id="L177">
+             <td class="code lineNumber">
+                  <a href="#L177">177</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private boolean doesMoveCauseCheck(int[] current, int[] next, String color){
+              </td>
+          </tr>
+                      <tr class="code" id="L178">
+             <td class="code lineNumber">
+                  <a href="#L178">178</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L179">
+             <td class="code lineNumber">
+                  <a href="#L179">179</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int[][] test_board = new int[8][8];</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L180">
+             <td class="code lineNumber">
+                  <a href="#L180">180</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L181">
+             <td class="code lineNumber">
+                  <a href="#L181">181</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//deep copy of board array&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L182">
+             <td class="code lineNumber">
+                  <a href="#L182">182</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="covered partlyCovered Loop_Coverage" title="Missing execution(s): ZERO ONE time(s).">for</span> (int x = 0; <span class="covered fullyCovered Strict_Condition_Coverage">x &lt; board.length</span>; x++)
+              </td>
+          </tr>
+                      <tr class="code" id="L183">
+             <td class="code lineNumber">
+                  <a href="#L183">183</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span class="covered partlyCovered Loop_Coverage" title="Missing execution(s): ZERO ONE time(s).">for</span> (int y = 0; <span class="covered fullyCovered Strict_Condition_Coverage">y &lt; board[x].length</span>; y++)
+              </td>
+          </tr>
+                      <tr class="code" id="L184">
+             <td class="code lineNumber">
+                  <a href="#L184">184</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">test_board[x][y] = board[x][y];</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L185">
+             <td class="code lineNumber">
+                  <a href="#L185">185</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              </td>
+          </tr>
+                      <tr class="code" id="L186">
+             <td class="code lineNumber">
+                  <a href="#L186">186</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              </td>
+          </tr>
+                      <tr class="code" id="L187">
+             <td class="code lineNumber">
+                  <a href="#L187">187</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int pieceID = test_board[current[0]][current[1]];</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L188">
+             <td class="code lineNumber">
+                  <a href="#L188">188</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L189">
+             <td class="code lineNumber">
+                  <a href="#L189">189</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Special Move: En Passant
+              </td>
+          </tr>
+                      <tr class="code" id="L190">
+             <td class="code lineNumber">
+                  <a href="#L190">190</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered partlyCovered Branch_Coverage" title="Unexecuted branches: then">if</span> (<span class="covered notCovered Strict_Condition_Coverage">pieceID == 7</span> || <span class="covered notCovered Strict_Condition_Coverage">pieceID == 14</span>){
+              </td>
+          </tr>
+                      <tr class="code" id="L191">
+             <td class="code lineNumber">
+                  <a href="#L191">191</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Branch_Coverage" title="Unexecuted branches: then,  implicit (omitted) branch">if</span> (<span class="covered notCovered Strict_Condition_Coverage">current[1] != next[1]</span> &amp;&amp; <span class="covered notCovered Strict_Condition_Coverage">test_board[next[0]][next[1]] == 0</span>){
+              </td>
+          </tr>
+                      <tr class="code" id="L192">
+             <td class="code lineNumber">
+                  <a href="#L192">192</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Statement_Coverage">test_board[current[0]][next[1]] = 0;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L193">
+             <td class="code lineNumber">
+                  <a href="#L193">193</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+              </td>
+          </tr>
+                      <tr class="code" id="L194">
+             <td class="code lineNumber">
+                  <a href="#L194">194</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+              </td>
+          </tr>
+                      <tr class="code" id="L195">
+             <td class="code lineNumber">
+                  <a href="#L195">195</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L196">
+             <td class="code lineNumber">
+                  <a href="#L196">196</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Common for all moves
+              </td>
+          </tr>
+                      <tr class="code" id="L197">
+             <td class="code lineNumber">
+                  <a href="#L197">197</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">test_board[next[0]][next[1]] = pieceID;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L198">
+             <td class="code lineNumber">
+                  <a href="#L198">198</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">test_board[current[0]][current[1]] = 0;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L199">
+             <td class="code lineNumber">
+                  <a href="#L199">199</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L200">
+             <td class="code lineNumber">
+                  <a href="#L200">200</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered partlyCovered Branch_Coverage" title="Unexecuted branches: else">if</span>(<span class="covered notCovered Strict_Condition_Coverage">color == &quot;white&quot;</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L201">
+             <td class="code lineNumber">
+                  <a href="#L201">201</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">return gamePieces[1].isThereCheck(test_board, WKingPos);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L202">
+             <td class="code lineNumber">
+                  <a href="#L202">202</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Branch_Coverage">else</span> 
+              </td>
+          </tr>
+                      <tr class="code" id="L203">
+             <td class="code lineNumber">
+                  <a href="#L203">203</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Statement_Coverage">return gamePieces[8].isThereCheck(test_board, BKingPos);</span>&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L204">
+             <td class="code lineNumber">
+                  <a href="#L204">204</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L205">
+             <td class="code lineNumber">
+                  <a href="#L205">205</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+              </td>
+          </tr>
+            </tbody>
+    </table></div>
+        <div class="creationNote">
+        created on March 15, 2010 1:59:42 AM EDT with
+        <a href="http://www.codecover.org">
+            CodeCover
+        </a>
+    </div>    
+</body>
+</html>
+        
