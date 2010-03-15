@@ -1,30 +1,43 @@
 package siberia.tests;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class BoardTest extends TestCase {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-	protected void setUp() throws Exception {
-		super.setUp();
+public class BoardTest {
+
+	@Before
+	public void setUp() throws Exception {
 	}
 
-	protected void tearDown() throws Exception {
-		super.tearDown();
+	@After
+	public void tearDown() throws Exception {
 	}
 
+	@Test
 	public final void testBoard() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testGetLocationIntInt() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testSetDragBoard() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testUpdateBoolean() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public final void testPaintComponentGraphics() {
 		fail("Not yet implemented"); // TODO
 	}
 

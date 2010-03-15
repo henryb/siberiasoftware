@@ -1,65 +1,87 @@
 package siberia.tests;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class ChatClientTest extends TestCase {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-	protected void setUp() throws Exception {
-		super.setUp();
+import Network.ChatClient;
+
+public class ChatClientTest {
+	
+	private ChatClient subject;
+
+	@Before
+	public void setUp() throws Exception {
+		subject = new ChatClient();
 	}
 
-	protected void tearDown() throws Exception {
-		super.tearDown();
+	@After
+	public void tearDown() throws Exception {
 	}
 
+	@Test
 	public final void testChatClient() {
-		fail("Not yet implemented"); // TODO
+		assertNotNull(subject);
 	}
 
+	@Test
 	public final void testGetParter() {
-		fail("Not yet implemented"); // TODO
+		String result = subject.getParter();
+		
+		assertNull(result);
 	}
 
+	@Test
 	public final void testSend() {
-		fail("Not yet implemented"); // TODO
+		String move = "testing";
+		
+		boolean result = subject.send(move);
+		assertTrue(result);
 	}
 
+	@Test
 	public final void testAddListener() {
-		fail("Not yet implemented"); // TODO
+		
 	}
 
+	@Test
 	public final void testNotifyObservers() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testLogin() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testWrite() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testDisconnect() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testProcessPacket() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testProcessMessage() {
 		fail("Not yet implemented"); // TODO
 	}
 
+	@Test
 	public final void testInit() {
 		fail("Not yet implemented"); // TODO
 	}
 
-	public final void testMain() {
-		fail("Not yet implemented"); // TODO
-	}
-
+	@Test
 	public final void testMove() {
 		fail("Not yet implemented"); // TODO
 	}
