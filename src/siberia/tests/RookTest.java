@@ -59,7 +59,7 @@ public class RookTest {
 		int[] position = {7,0};
 		int[] next = {4,0};
 		
-		assertFalse(subject.verify_move(board_at_start, position, next));
+		assertFalse("Rook able to jump over pieces", subject.verify_move(board_at_start, position, next));
 	}
 	
 	@Test
