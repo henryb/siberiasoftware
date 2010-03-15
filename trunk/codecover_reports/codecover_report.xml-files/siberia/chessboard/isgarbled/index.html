@@ -1,0 +1,324 @@
+
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>isGarbled - Mar 15, 2010 1:48:33 AM - CodeCover Report</title>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
+</head>
+<body>
+    <div class="headline">
+        Coverage Report
+    </div>
+    <div class="session">
+        Mar 15, 2010 1:48:33 AM
+    </div>
+    <div class="sessionDate">
+        measured on March 15, 2010 1:48:33 AM EDT
+    </div>
+    <div class="linkToTop">
+          <a href="../../../../codecover_report.xml">
+              up to the title page
+          </a>
+    </div>
+    <div class="ancestors">
+    <a href="../../index.html">
+        siberia</a>
+    .
+    <a href="../index.html">
+        ChessBoard</a>
+    .
+    isGarbled
+    </div><div class="methodInfo">
+    <table class="methodInfo">
+    <thead class="methodInfo">
+        <tr class="methodInfo">
+            <th class="methodInfo firstcolumn"></th>
+            <th class="methodInfo" colspan="3">Statement Coverage</th>
+            <th class="methodInfo" colspan="3">Branch Coverage</th>
+            <th class="methodInfo" colspan="3">Loop Coverage</th>
+            <th class="methodInfo" colspan="3">Strict Condition Coverage</th>
+            <th class="methodInfo" colspan="3">Synchronized Coverage</th>
+            <th class="methodInfo" colspan="3">?-Operator Coverage</th>
+        </tr>
+    </thead>
+    <tbody class="methodInfo">
+        <tr class="methodInfo">
+            <td class="methodInfo firstcolumn">
+                    public Boolean isGarbled( String move )
+            </td>  
+                                    <td class="methodInfo">
+                        7&nbsp;/&nbsp;8
+                </td>
+                <td class="methodInfo">
+                        87&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:87%"></div></div>
+                </td>   
+                                                <td class="methodInfo">
+                        3&nbsp;/&nbsp;4
+                </td>
+                <td class="methodInfo">
+                        75&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:75%"></div></div>
+                </td>   
+                                            <td class="methodInfo">
+                        0&nbsp;/&nbsp;0
+                </td>
+                <td class="methodInfo">
+                        ---
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="grey"></div>
+                </td>  
+                                                <td class="methodInfo">
+                        0&nbsp;/&nbsp;8
+                </td>
+                <td class="methodInfo">
+                        0&nbsp;%
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="red"><div class="green" style="width:0%"></div></div>
+                </td>   
+                                            <td class="methodInfo">
+                        0&nbsp;/&nbsp;0
+                </td>
+                <td class="methodInfo">
+                        ---
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="grey"></div>
+                </td>  
+                                            <td class="methodInfo">
+                        0&nbsp;/&nbsp;0
+                </td>
+                <td class="methodInfo">
+                        ---
+                </td>
+                <td class="methodInfo coverage">
+                        <div class="grey"></div>
+                </td>  
+                        </tr>
+    </tbody>
+    </table></div>
+    <div class="code">
+    <table class="code">
+        <thead class="code">
+        <tr class="code">
+                        <th class="code" colspan="3">ChessBoard.java</th>
+                </tr>
+        </thead>
+        <tbody class="code">
+                      <tr class="code" id="L351">
+             <td class="code lineNumber">
+                  <a href="#L351">351</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public Boolean isGarbled( String move ){
+              </td>
+          </tr>
+                      <tr class="code" id="L352">
+             <td class="code lineNumber">
+                  <a href="#L352">352</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L353">
+             <td class="code lineNumber">
+                  <a href="#L353">353</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Branch_Coverage">try</span> {
+              </td>
+          </tr>
+                      <tr class="code" id="L354">
+             <td class="code lineNumber">
+                  <a href="#L354">354</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">String[] tokens = move.split(&quot;[ ]&quot;);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L355">
+             <td class="code lineNumber">
+                  <a href="#L355">355</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int startRow = Integer.parseInt(tokens[0]);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L356">
+             <td class="code lineNumber">
+                  <a href="#L356">356</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int startCol = Integer.parseInt(tokens[1]);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L357">
+             <td class="code lineNumber">
+                  <a href="#L357">357</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int endRow = Integer.parseInt(tokens[2]);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L358">
+             <td class="code lineNumber">
+                  <a href="#L358">358</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">int endCol = Integer.parseInt(tokens[3]);</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L359">
+             <td class="code lineNumber">
+                  <a href="#L359">359</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L360">
+             <td class="code lineNumber">
+                  <a href="#L360">360</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered partlyCovered Branch_Coverage" title="Unexecuted branches: else">if</span>(<span class="covered notCovered Strict_Condition_Coverage">startRow &gt;= 0</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">startRow &lt;= 7</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">startCol &gt;= 0</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">startCol &lt;= 7</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">endRow &gt;= 0</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">endRow &lt;= 7</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">endCol &gt;= 0</span> &amp; <span class="covered notCovered Strict_Condition_Coverage">endCol &lt;= 7</span>)
+              </td>
+          </tr>
+                      <tr class="code" id="L361">
+             <td class="code lineNumber">
+                  <a href="#L361">361</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">return false;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L362">
+             <td class="code lineNumber">
+                  <a href="#L362">362</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Branch_Coverage">else</span> 
+              </td>
+          </tr>
+                      <tr class="code" id="L363">
+             <td class="code lineNumber">
+                  <a href="#L363">363</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered notCovered Statement_Coverage">return true;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L364">
+             <td class="code lineNumber">
+                  <a href="#L364">364</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+          </tr>
+                      <tr class="code" id="L365">
+             <td class="code lineNumber">
+                  <a href="#L365">365</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="covered fullyCovered Branch_Coverage">catch (NumberFormatException e)</span> {
+              </td>
+          </tr>
+                      <tr class="code" id="L366">
+             <td class="code lineNumber">
+                  <a href="#L366">366</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="covered fullyCovered Statement_Coverage">return true;</span>
+              </td>
+          </tr>
+                      <tr class="code" id="L367">
+             <td class="code lineNumber">
+                  <a href="#L367">367</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+              </td>
+          </tr>
+                      <tr class="code" id="L368">
+             <td class="code lineNumber">
+                  <a href="#L368">368</a>
+                       </td>
+              <td class="code executions">
+                       &nbsp;
+              </td>
+              <td class="code text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+              </td>
+          </tr>
+            </tbody>
+    </table></div>
+        <div class="creationNote">
+        created on March 15, 2010 1:59:42 AM EDT with
+        <a href="http://www.codecover.org">
+            CodeCover
+        </a>
+    </div>    
+</body>
+</html>
+        
