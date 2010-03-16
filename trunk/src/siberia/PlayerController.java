@@ -1,9 +1,8 @@
 package siberia;
 
-import java.util.*;
+public class PlayerController {
 
-public class PlayerController extends TimerTask {
-
+	private boolean over = false;
 	private Player white;
 	private Player black;
 	private ChessBoard game;
@@ -16,6 +15,9 @@ public class PlayerController extends TimerTask {
 	}
 
 	public void makeMove(Player p, String move) {
+		if (over) {
+			return;
+		}
 		System.out.println(p.toString() + " " + move + " " + Boolean.toString(whiteToPlay));
 		if (whiteToPlay && p.equals(white)) {
 			if (!game.isGarbled(move)) {
@@ -24,6 +26,9 @@ public class PlayerController extends TimerTask {
 				game.decodeMove(move);
 				black.putMove(move);
 				game.printBoard();
+				if (game.isThereCheckMate("black")) {
+					over = true;
+				}
 			} else {
 				System.err.println("Garbled move recieved: " + move);
 			}
@@ -34,7 +39,9 @@ public class PlayerController extends TimerTask {
 				game.decodeMove(move);
 				white.putMove(move);
 				game.printBoard();
-
+				if (game.isThereCheckMate("white")) {
+					over = true;
+				}
 			} else {
 				System.err.println("Garbled move recieved: " + move);
 			}
@@ -73,13 +80,11 @@ public class PlayerController extends TimerTask {
 		return black;
 	}
 
-	@Override
-	public void run() {
-		if (whiteToPlay) {
-			//white forfeits
-		} else {
-			//black forfeits
-		}
+	public void over(){
+		over = true;
+	}
 
+	public boolean isOver(){
+		return over;
 	}
 }

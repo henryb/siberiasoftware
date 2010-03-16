@@ -22,11 +22,7 @@ public class PlayerControllerTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public final void testRun() {
-		subject.run();
-		assert(true);
-	}
+
 
 	@Test
 	public final void testPlayerController() {
