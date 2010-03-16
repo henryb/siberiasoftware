@@ -22,20 +22,20 @@ public class ChessBoard {
 			lastMove = new int[][]{{0,0}, {0,0}};
 			
 			gamePieces = new ChessPiece[15];
-			gamePieces[1] = new King("white", "../resources/whiteking.jpg");
-			gamePieces[2] = new Queen("white", "../resources/whitequeen.jpg");
-			gamePieces[3] = new Rook("white", "../resources/whiterook.jpg");
-			gamePieces[4] = new Rook("white", "../resources/whiterook.jpg");
-			gamePieces[5] = new Knight("white", "../resources/whiteknight.jpg");
-			gamePieces[6] = new Bishop("white", "../resources/whitebishop.jpg");
-			gamePieces[7] = new Pawn("white", "../resources/whitepawn.jpg");
-			gamePieces[8] = new King("black", "../resources/blackking.jpg");
-			gamePieces[9] = new Queen("black", "../resources/blackqueen.jpg");
-			gamePieces[10] = new Rook("black", "../resources/blackrook.jpg");
-			gamePieces[11] = new Rook("black", "../resources/blackrook.jpg");
-			gamePieces[12] = new Knight("black", "../resources/blackknight.jpg");
-			gamePieces[13] = new Bishop("black", "../resources/blackbishop.jpg");
-			gamePieces[14] = new Pawn("black", "../resources/blackpawn.jpg");
+			gamePieces[1] = new King("white", "resources/whiteking.jpg");
+			gamePieces[2] = new Queen("white", "resources/whitequeen.jpg");
+			gamePieces[3] = new Rook("white", "resources/whiterook.jpg");
+			gamePieces[4] = new Rook("white", "resources/whiterook.jpg");
+			gamePieces[5] = new Knight("white", "resources/whiteknight.jpg");
+			gamePieces[6] = new Bishop("white", "resources/whitebishop.jpg");
+			gamePieces[7] = new Pawn("white", "resources/whitepawn.jpg");
+			gamePieces[8] = new King("black", "resources/blackking.jpg");
+			gamePieces[9] = new Queen("black", "resources/blackqueen.jpg");
+			gamePieces[10] = new Rook("black", "resources/blackrook.jpg");
+			gamePieces[11] = new Rook("black", "resources/blackrook.jpg");
+			gamePieces[12] = new Knight("black", "resources/blackknight.jpg");
+			gamePieces[13] = new Bishop("black", "resources/blackbishop.jpg");
+			gamePieces[14] = new Pawn("black", "resources/blackpawn.jpg");
 			
 		}
 		
@@ -153,7 +153,7 @@ public class ChessBoard {
 			if (myPiece.verify_move(board, current, next)){
 				if(!doesMoveCauseCheck(current, next, color))
 				{
-					this.applyMove(current, next);				
+					//this.applyMove(current, next);
 					return true;
 				}
 				else
@@ -163,7 +163,7 @@ public class ChessBoard {
 			if (this.verifySpecialMove(current, next)){
 				if(!doesMoveCauseCheck(current, next, color))
 				{
-					this.applyMove(current, next);				
+					//this.applyMove(current, next);
 					return true;
 				}
 				else

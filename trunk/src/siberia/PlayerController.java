@@ -19,17 +19,22 @@ public class PlayerController extends TimerTask {
 		System.out.println(p.toString() + " " + move + " " + Boolean.toString(whiteToPlay));
 		if (whiteToPlay && p.equals(white)) {
 			if (!game.isGarbled(move)) {
+
 				whiteToPlay = !whiteToPlay;
 				game.decodeMove(move);
 				black.putMove(move);
+				game.printBoard();
 			} else {
 				System.err.println("Garbled move recieved: " + move);
 			}
 		} else if (p.equals(black) && !whiteToPlay) {
 			if (!game.isGarbled(move)) {
+
+				whiteToPlay = !whiteToPlay;
 				game.decodeMove(move);
 				white.putMove(move);
-				whiteToPlay = !whiteToPlay;
+				game.printBoard();
+
 			} else {
 				System.err.println("Garbled move recieved: " + move);
 			}
@@ -48,9 +53,11 @@ public class PlayerController extends TimerTask {
 		}
 	}
 
-	public void setWhitePlayer(Player x){
-		if(x == null) return;
-		if(white != null && black != null && black.equals(x)){
+	public void setWhitePlayer(Player x) {
+		if (x == null) {
+			return;
+		}
+		if (white != null && black != null && black.equals(x)) {
 			black = white;
 			white = x;
 		}
