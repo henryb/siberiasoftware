@@ -60,9 +60,6 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 
 	}
 
-	public void destroy() {
-	}
-
 	public void checkMove(String move) {
 		//boolean success = pc.getBoard().movePiece(begin,end);
 
