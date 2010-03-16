@@ -71,14 +71,23 @@ public class PlayerControllerTest {
 	@Test
 	public final void testSetWhitePlayer() {
 		subject.setWhitePlayer(null);
+		assertNull(subject.getWhite());
+		
+		
 		player = new NetworkPlayer(subject);
-		anotherplayer = new NetworkPlayer(subject);
+		subject.setWhitePlayer(player);
+		assertNull(subject.getWhite());
 		subject.addPlayer(player);
+		subject.setWhitePlayer(player);
+		assertSame(player, subject.getWhite());
+		
+		anotherplayer = new NetworkPlayer(subject);
 		subject.addPlayer(anotherplayer);
 		subject.setWhitePlayer(player);
-		subject.setWhitePlayer(anotherplayer);
+		assertSame(player, subject.getWhite());
 		
-		assert(true);
+		subject.setWhitePlayer(anotherplayer);
+		assertSame(anotherplayer, subject.getWhite());
 	}
 
 	@Test

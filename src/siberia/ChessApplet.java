@@ -19,7 +19,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 
 	public ChessApplet() {
 
-		setSize(544, 544);
+		setSize(800, 600);
 		pc = new PlayerController();
 		NetworkPlayer np = new NetworkPlayer(pc);
 		pc.addPlayer(this); //white
