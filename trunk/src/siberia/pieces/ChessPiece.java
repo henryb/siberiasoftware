@@ -16,9 +16,7 @@ public abstract class ChessPiece {
         return image;
     }
 
-	public boolean verify_move(int[][] board, int[] position, int[] next){
-		return false;
-	}
+	public abstract boolean verify_move(int[][] board, int[] position, int[] next);
 
     protected boolean canDefeat(String color, int pieceID) {
         if (color == "white") {

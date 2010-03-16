@@ -10,7 +10,7 @@ import siberia.NetworkPlayer;
 import siberia.PlayerController;
 
 public class NetworkPlayerTest {
-	
+
 	private NetworkPlayer subject;
 	private PlayerController pc;
 
@@ -19,7 +19,7 @@ public class NetworkPlayerTest {
 	public void setUp() throws Exception {
 		pc = new PlayerController();
 		// set up PlayerController pc here
-		
+
 		subject = new NetworkPlayer(pc);
 	}
 
@@ -39,33 +39,34 @@ public class NetworkPlayerTest {
 		assert(true);
 	}
 
-	@Test
+/*	@Test
 	public final void testReady() {
 		assertFalse(subject.ready());
-		PlayerController anotherpc = new PlayerController();
-		// set up PlayerController anotherpc here
-		
-		NetworkPlayer another = new NetworkPlayer(anotherpc);
+
+		ChessApplet heavyweight = new ChessApplet();
+
 		assertTrue("NetworkPlayer not ready", subject.ready());
-		assertTrue("Other NetworkPlayer not ready", another.ready());
-	}
+	}*/
 
 	@Test
 	public final void testMove_setPlayerWhite() {
-		
+
+		pc.addPlayer(subject);
+		pc.addPlayer(subject);
+
 		String move = "POSITION:WHITE";
 		subject.move(move);
 		assert(true);
-		
+
 	}
-	
+
 	@Test
 	public final void testMove() {
-		
+
 		String move = "1 1 1 1";
 		subject.move(move);
 		assert(true);
-		
+
 	}
 
 }

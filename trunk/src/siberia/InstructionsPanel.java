@@ -12,6 +12,8 @@ import javax.swing.*;
  * @author tradams
  */
 public class InstructionsPanel extends JPanel{
+	private static final long serialVersionUID = 1L;
+
 	public InstructionsPanel(){
 		JLabel jl = new JLabel("Instructions: \n\n\nDo X Y Z and shit will work....");
 		this.add(jl);

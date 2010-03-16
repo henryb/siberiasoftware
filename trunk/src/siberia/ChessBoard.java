@@ -45,11 +45,11 @@ public class ChessBoard {
 			board[1] = new int[]{14,14,14,14,14,14,14,14};
 			
 			// 0 corresponds to empty space
-			for(int i = 2; i <= 5; i++){
-				for(int j = 0; j < board[i].length; j++){
-					board[i][j] = 0;			
-				}
-			}
+			board[2] = new int[]{0,0,0,0,0,0,0,0};
+			board[3] = new int[]{0,0,0,0,0,0,0,0};
+			board[4] = new int[]{0,0,0,0,0,0,0,0};
+			board[5] = new int[]{0,0,0,0,0,0,0,0};
+			
 			board[6] = new int[]{7,7,7,7,7,7,7,7};
 			board[7] = new int[]{3,5,6,2,1,6,5,4};
 			
@@ -104,7 +104,7 @@ public class ChessBoard {
 					board[7][7] = 0;
 				}
 				// Black King, Queenside castling
-				if (pieceID == 8 & next[1] == 2){
+				if (pieceID == 8 && next[1] == 2){
 					board[0][3] = 10;
 					board[0][0] = 0;
 				}
@@ -140,7 +140,7 @@ public class ChessBoard {
 		
 		public boolean validateMove(int[] current, int[] next, String color){			
 			
-			if (current == next){
+			if (current[0] == next[0] && current[1] == next[1]){
 				return false;
 			}
 			
@@ -320,7 +320,7 @@ public class ChessBoard {
 			int endRow = Integer.parseInt(tokens[2]);
 			int endCol = Integer.parseInt(tokens[3]);
 			
-			if(startRow == 1 & startCol == 1 & endRow == 1 & endCol == 1)
+			if(startRow == 1 && startCol == 1 && endRow == 1 && endCol == 1)
 				return false;
 			else{
 				int[] startPos = new int[]{startRow, startCol};
@@ -357,7 +357,7 @@ public class ChessBoard {
 				int endRow = Integer.parseInt(tokens[2]);
 				int endCol = Integer.parseInt(tokens[3]);
 				
-				if(startRow >= 0 & startRow <= 7 & startCol >= 0 & startCol <= 7 & endRow >= 0 & endRow <= 7 & endCol >= 0 & endCol <= 7)
+				if(startRow >= 0 && startRow <= 7 && startCol >= 0 && startCol <= 7 && endRow >= 0 && endRow <= 7 && endCol >= 0 && endCol <= 7)
 					return false;
 				else 
 					return true;
