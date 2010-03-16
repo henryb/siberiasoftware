@@ -16,6 +16,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	private StatusPanel status;
 	private PlayerController pc;
 	private InstructionsPanel ip;
+	private StartWaitPanel swp;
 
 	public ChessApplet() {
 
@@ -76,6 +77,9 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		jb.setBounds(300, 550, 300, 50);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
 
+
+		swp = new StartWaitPanel(np, pc);
+		layers.add(swp, new Integer(50));
 		this.addWindowListener(new WindowAdapter() {
 
 			@Override
@@ -105,7 +109,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 			JOptionPane.showMessageDialog(this, "Garbled");
 		}
 		dboard.update();
-		
+
 	}
 
 	public void putMove(String move) {
@@ -117,10 +121,14 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		dboard.update();
 	}
 
-	/*public boolean ready() {
+	public boolean ready() {
 		return true;
 
-	}*/
+	}
+
+	public void gameStart() {
+		layers.setLayer(swp,new Integer(-9999));
+	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("status")) {
@@ -140,13 +148,14 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	}
 
 	public static void main(String args[]) {
-		
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-        		ChessApplet stupid = new ChessApplet();
-        		stupid.setVisible(true);
-            }
-        });
+
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+
+			public void run() {
+				ChessApplet stupid = new ChessApplet();
+				stupid.setVisible(true);
+			}
+		});
 
 	}
 }

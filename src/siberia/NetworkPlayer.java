@@ -24,14 +24,16 @@ public class NetworkPlayer implements Player,MoveListener{
         cc.write(move);
     }
    
-    // ready() never gets called, so I'm commenting out for now - Henry
- /*   public boolean ready() {
+   public void gameStart(){
+	   
+   }
+   public boolean ready() {
         if(cc.getParter() != null){
             return true;
         } else {
             return false;
         }
-    }*/
+    }
 
     public void move(String move) {
 		

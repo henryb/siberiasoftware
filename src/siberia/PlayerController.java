@@ -52,6 +52,13 @@ public class PlayerController {
 		return game;
 	}
 
+	public void start(){
+		if(white != null && black != null){
+			white.gameStart();
+			black.gameStart();
+		}
+	}
+
 	public void addPlayer(Player x) {
 		if (white == null) {
 			white = x;
