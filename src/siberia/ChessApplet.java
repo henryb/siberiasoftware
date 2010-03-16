@@ -45,10 +45,12 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		jb.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				if(pc.isOver()) return;
 				int x = JOptionPane.showConfirmDialog(f, "Are you sure you wish to forfeit the game?");
 				if (x == 0) {
 					// confirm forfeit
 					pc.makeMove(f, "1 1 1 1");
+					pc.over();
 				} else {
 					JOptionPane.showMessageDialog(f, "You may be able to still win this, if your name is Kasparov");
 				}
