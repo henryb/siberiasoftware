@@ -9,7 +9,7 @@
 \subsection{Flow of Events for the Play Chess Use Case}
 \label{playchess}
 \subsubsection{Preconditions}
-The local player has opened a compatible web browser and navigated to the URL of the AnonChess website.
+The local player has installed the AnonChess application, and opened the program.
 \subsubsection{Main Flow}
 This use case begins when the player starts the game (S-10). The player shall engage in a chess match with a remote player (S-20). The use case ends when the system informs the player that the game is over (S-30).
 \subsubsection{Sub Flows}
@@ -28,10 +28,10 @@ This use case begins when the player starts the game (S-10). The player shall en
 \subsubsection{Preconditions}
  The program has been initialized.
 \subsubsection{Main Flow}
- This use case begins when the player clicks the "Start New Game" button on the AnonChess web page, submitting a request to play (S-10). The player shall either start the game with an opponent who is already waiting to play, or have to wait for an opponent to submit a request to play (S-20, S-30). The use case ends when the system initializes a new game (S-40).
+ This use case begins when the player clicks the "Start New Game" button in the AnonChess application, submitting a request to play (S-10). The player shall either start the game with an opponent who is already waiting to play, or have to wait for an opponent to submit a request to play (S-20, S-30). The use case ends when the system initializes a new game (S-40).
 \subsubsection{Sub Flows}
 \begin{description}
-\item[S-10 Submit Request to Play] The player shall click the "Start New Game" button on the AnonChess web page, which is the first step to connecting with an opponent (S-20, S-30).
+\item[S-10 Submit Request to Play] The player shall click the "Start New Game" button in the AnonChess application, which is the first step to connecting with an opponent (S-20, S-30).
 \item[S-20 Connect with Waiting Player] If there is already a person queued to play, the system shall establish a connection(E-10) between the local player and the waiting player.  The system shall display a dialog box stating that the local player has been connected, and start the game (S-40).
 \item[S-30 Wait to Connect with Next Available Opponent] If there is no one waiting to play, the system shall display a dialog box stating that the local player is queued to play against the next available opponent who submits a request to play.  If an opponent becomes available within 10 minutes, the system shall start the game (S-40, E-10, E-20).
 \item[S-40 Begin New Game] The system shall initialize and begin a chess game between the local player and the remote player.
@@ -39,7 +39,7 @@ This use case begins when the player starts the game (S-10). The player shall en
 \subsubsection{Alternative Flows}
 \begin{description}
 \item[E-10 Connection Cannot be Established] The system shall display a dialog box stating that it could not establish a connection due to technical difficulties, and the player shall be given the chance to submit another request to play (S-10).
-\item[E-20 No Opponent Available Within 10 Minutes] The system shall display a dialog box asking the local player if he/she would like to keep waiting.  If the local player does not click “Yes”, the use case terminates.
+\item[E-20 No Opponent Available Within 10 Minutes] The system shall display a dialog box asking the local player if he/she would like to keep waiting.  If the local player does not click “Yes�?, the use case terminates.
 \end{description}
 
 
@@ -51,7 +51,7 @@ This use case begins when the player starts the game (S-10). The player shall en
 This use case begins when the local player decides to quit, which results in forfeiting the game.  The player shall submit a request to quit (S-10).  The system shall ask the local player to verify his or her wish to quit (S-20). The use case ends when the game is terminated (S-30, E-10).
 \subsubsection{Sub Flows}
 \begin{description}
-\item[S-10 Submit Request to Quit] The local player shall click the "Quit Game" button on the AnonChess web page.  The system shall verify the player's resignation (S-20).
+\item[S-10 Submit Request to Quit] The local player shall click the "Quit Game" button in the AnonChess application.  The system shall verify the player's resignation (S-20).
 \item[S-20 Verify Resignation] he system shall display a dialog box asking the local player to verify his or her decision to quit.  If the local player answers affirmatively (E-10), the system shall terminate the chess game (S-30).
 \item[S-30 Terminate Game] The system shall display a message to both the local player and the remote player indicating the remote player has won the game.  The system shall close the remote connection.  The system shall allow the player to create a new game per the Start Game use case (\ref{startgame}). 
 \end{description}
