@@ -1,0 +1,32 @@
+\section{Introduction}
+
+\subsection{Purpose}
+This Software Requirements Specifcation provides a complete description of all the software design requirements and specifcations of AnonChess, a chess game. This document explains all features, functions, and constraints of this program.
+AnonChess is a program built to allow remote users to play each other in chess through a web-based, anonymous system. Its main focus is just to let people play; as users log into the system they are paired with the first available player and can proceed. The program needs to be intuitive, reliable, and easy to use.
+  
+\subsection{Scope}
+This document describes the design and architecture of AnonChess. This document’s intended audience includes everyone working on (designing, developing, testing) AnonChess.
+\subsection{Definitions and Abbreviations}
+\begin{description}                                      
+\item[Applet] A Java application that can be embedded inside a web browser to display a graphical user interface. 
+\item[Bishop (Chess Piece)] A bishop can move an unlimited number of squares diagonally.
+\item[Capturing] The act of placing a chess piece in the place of an opponent's chess piece. The captured chess piece is then removed from play.
+\item[Castling (Chess Move)] A move in chess where the king moves two squares towards the rook, and the rook moves past the king to the adjacent square. Neither the king nor the involved rook are allowed to castle if they moved in a previous turn.
+\item[Check] When a king is one move away from being captured, that king is said to be in check. 
+\item[Checkmate] When the king is in check and there is no move that can remove him from that situation, then the king is said to be checkmated.
+\item[GUI/Graphical User Interface] A graphical front-end (as opposed to text-based) used to interact with the user. Input is usually using a mouse and keyboard. 
+\item[IP Address ] An Internet Protocol address is a number assigned to computers on the internet in order to identify them.
+\item[Java] A platform-independent programming language.
+\item[JVM] Java Virtual Machine. An application that runs Java code on computers. 
+\item[Knight (Chess Piece)] A knight moves two squares in any direction, then moves another square either right or left. Only the final square needs to be vacant.
+\item[King (Chess Piece)] The king can move one square in any direction. Castling is the only exception.
+\item[Network Player]  The 'Player' who is on the other side of the connection to the internet.
+\item[Pawn]  A pawn may move forward two squares on its first turn provided they are both empty and may never move back. It is limited to one square after that. A pawn captures pieces that are located adjacent to the square in front of it. 
+\item[Player] The end user participating in a game of AnonChess. 
+\item[Promotion] When a pawn reaches the end of the board, it is then converted to a queen.
+\item[Queen] A queen may move an unlimited number of squares horizontally, vertically or diagonally.
+\item[Rook] A rook may move an unlimited number of squares horizontally or vertically.
+\item[Smack] Code written by a third party to make it easier for developers to incorporate XMPP communication in their applications..
+\item[Web Browser] A program used to view websites on the internet.
+\item[XMPP/Jabber] A protocol used on the internet to facilitate communication. It is usually reserved for small transfers.
+\end{description}

@@ -1,0 +1,24 @@
+\section{Nonfunctional Requirements}
+\subsection{Performance Requirements}
+AnonChess will not have memory leaks, will use no more than 256 MB of memory and no more than 10\% of the processor 
+at any time (these are peak maximums). It will require the latest version of Java 6 SEand an internet connection faster 
+than dial-up (56K).
+\subsubsection{Computer Requirements}
+AnonChess will not allow for more than 1 error in every 100 moves. If it does encounter any error, it will present 
+to the user enough details to be helpful without giving away security details.
+\subsubsection{Program Stability}
+AnonChess will not install any malicious software on any user's machine. It will not perform any malicious actions 
+at any time, and will do nothing that is unrelated to executing itself in order to let users play chess.
+\subsection{Security Requirements}
+\subsubsection{Program Platform}
+AnonChess will work on any modern computer (not mobile) browser capable of running Java 6 SE, and will thus be operating 
+system independent.
+\subsubsection{Program Modules}
+AnonChess will be built with high cohesion and low coupling in mind, using modules/layers that can interface with 
+each other, thus allowing for extensibility and upgrades with minimal time involved.
+\subsubsection{Program Usability}
+AnonChess will be intuitive to use and will feature adequate instructions for specific implementations of the chess 
+game (meaning that it will not describe rules in depth, but will describe specific instructions for how to play 
+specifically AnonChess, for instance what the user needs to do to make a move). The game will have no more than a 3 
+second lag between user input and response.
+

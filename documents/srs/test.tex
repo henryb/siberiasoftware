@@ -1,0 +1,111 @@
+\documentclass[10pt,letterpaper,notitlepage]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{flafter}
+\author{Trevor Adams}
+\title{Use Cases for ATM}
+%\setcounter{secnumdepth}{3}
+\setcounter{subsection}{1}
+\begin{document}
+
+\section{ Diagram }
+\begin{figure}[H]
+   \centering
+   \includegraphics[scale=0.5]{Diagram1.png}
+   \caption{Use case diagram for ATM}
+  \end{figure}
+%\FloatBarrier
+\section{ Cases }
+
+
+
+
+
+\subsection{Session}
+\subsubsection{Preconditions}
+\subsubsection{Main Flow}
+User session, includes a transaction and a receipt for that transaction 
+\subsubsection{Sub Flows}
+\begin{description}
+\item[Enter Pin] User enters pin, if it is valid flow moves to transaction if it is invalid it moves to transaction's invalid pin alternate flow
+\item[Transaction] Type of transaction is asked and flow continues to the transaction
+\item[Receipt] Calls Print receipt's flow 
+\end{description}
+\subsubsection{Alternative Flows}
+
+
+
+
+\subsection{Print Receipt}
+\subsubsection{Preconditions}
+Successful transaction completion
+\subsubsection{Main Flow}
+Prints a receipt for the transaction
+\subsubsection{Sub Flows}
+\begin{description}
+
+\item[Generate Receipt] Gets basic information from the system, calls Inquiry's balance subflow to get the new balance, calls transactions Amount subflow to get the amount added or removed, if applicable
+\end{description}
+\subsubsection{Alternative Flows}
+
+\subsection{Transaction}
+\subsubsection{Preconditions}
+\subsubsection{Main Flow}
+Parent use case for the transactions, provides initial flow for all transactions
+\subsubsection{Sub Flows}
+\begin{description}
+\item[Resolve Account] Asks the user to choose their account
+\item[Query Amount] Asks the user for an amount of money
+\end{description}
+\subsubsection{Alternative Flows}
+\begin{description}
+\item[Invalid Pin] user is asked to reenter pin, if they want to do another transaction
+\end{description}
+
+
+\subsection{Withdraw}
+\subsubsection{Preconditions}
+Pin has been entered and a session has been initialized
+\subsubsection{Main Flow}
+Cash is removed from the account and given to the user
+\subsubsection{Sub Flows}
+\begin{description}
+\item[Resolve Account] Asks the user to choose their account
+\item[Query Amount] Asks the user for an amount of money
+\item[Validate] validates with the system that the amount is in the account, calls inquiry's balance subflow
+\item[Withdraw] performs the withdraw and give the money to the user
+\end{description}
+\subsubsection{Alternative Flows}
+
+
+\subsection{Deposit}
+\subsubsection{Preconditions}
+User possesses the money to deposit
+\subsubsection{Main Flow}
+Money is creditted to the user's account
+\subsubsection{Sub Flows}
+\begin{description}
+\item[Resolve Account] calls transaction's resolve account subflow
+\item[Query Amount]  calls transaction's query amount subflow
+\item[Receive Money] system takes envelope from the user
+\item[Deposit]  performs the withdraw and credits the user's account
+\end{description}
+\subsubsection{Alternative Flows}
+
+\subsection{Inquiry}
+\subsubsection{Preconditions}
+\subsubsection{Main Flow}
+Obtains the balance from the system
+\subsubsection{Sub Flows}
+\begin{description}
+\item[Resolve Account] calls transaction's resolve account subflow
+\item[Balance] gets the account balance
+\end{description}
+\subsubsection{Alternative Flows}
+
+\end{document}

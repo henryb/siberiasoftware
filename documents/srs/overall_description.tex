@@ -1,0 +1,29 @@
+\section{Overall Description}
+
+\subsection{Product Perspective}
+Students have requested a product to that allows users to play a game of chess at remote locations over the internet, anonymously. AnonChess is one solution to this request, and aims to provide a simple, and reliable way to do so.
+\subsubsection{System Interfaces}
+\begin{description}
+\item[Network] AnonChess utilizes the internet to pass data between the connected parties, there is no direct user contact with the network.
+\end{description}
+\subsubsection{Hardware Interfaces}
+AnonChess runs on any computer that meets the following requirements: 
+\begin{itemize}
+\item{Capable of running Java SE 6}
+\item{Capable of connecting to the Internet}
+\item{Has a webbrowser, keyboard, and mouse}
+\end{itemize}
+\subsubsection{Software Interfaces}
+ While the application itself is standalone, it is built as a Java Applet; as such it requires a browser with a Java plugin to run. The application communicates with a XMPP server to facilitate networking, as explained in subsection 2.1.4.
+\subsubsection{Communication Interfaces}
+AnonChess uses the XMPP protocol to resolve and connect users; this protocol is both commonly used and has been shown to be reliable.
+\subsubsection{Memory Contraints}
+AnonChess requires at least 256 MB of memory to run.
+\subsubsection{Site Adaptation Requirements}
+There are no site adaptation requirements to use AnonChess, however to host AnonChess's servers there are some adaptations required: an XMPP server, and the resolver bot will need to be hosted.
+
+\subsection{User Classes and Characteristics}
+The main users of this program will be people who are familiar with the game of chess and wish to play it in a web-based environment. The opponent's identity is unnecessary and is not required as the software randomly chooses an opponent from the list of connected, available users.
+
+\subsection{Assumptions and Dependencies}
+It is assumed that user has an internet connection faster than 56kbps (dial-up), a Java plugin to run Java Applets in their browser, a web browser, and Java 6 SE.

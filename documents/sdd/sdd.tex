@@ -1,0 +1,89 @@
+\documentclass[letterpaper,titlepage]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Config
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Page layout, header, footer
+\usepackage{fullpage}
+%\usepackage{indentfirst}
+%\setlength{\parindent}{0pt}
+	
+% For graphics
+\usepackage{graphicx}
+\graphicspath{{./gfx/}}
+\usepackage{wrapfig}
+\usepackage{flafter}
+\usepackage{placeins}
+\usepackage{float}
+% For URLs
+\usepackage[colorlinks,
+            linkcolor=blue,
+            filecolor=blue,
+	            urlcolor=blue]
+            {hyperref}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{25pt}
+\pagestyle{fancy}
+	
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{Software Design Document}
+\fancyfoot[L]{\today}
+\fancyfoot[C]{Scope}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Signature Stuff
+\newcommand{\sigline}[1]{
+  \rule{\textwidth}{.5pt}\\
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r }
+  #1 & Date\\[2cm]
+  \end{tabular*}
+}
+	
+% Shortcut commands
+\newcommand{\bullets}[1]{\begin{itemize} #1 \end{itemize}}
+\newcommand{\deflist}[1]{\begin{description} #1 \end{description}}
+	
+\begin{document}
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{Software Design Document}}
+\author{\textbf{Siberia Software}\\
+        Trevor Adams\\
+        Henry Blum\\
+        Nikita Byalsky\\
+        Alexander Ivanov\\
+        Rashid Al-Naemi
+	}
+\date{\today\\Revision 1}
+\maketitle
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{introduction}
+\input{sdsm}
+\input{dbm}
+\input{rtt}
+
+\end{document}
+
