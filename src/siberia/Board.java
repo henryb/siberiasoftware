@@ -27,7 +27,7 @@ public class Board extends JPanel {
 				this.add(board[i][j]);
 			}
 		}
-		img = new ImageIcon("../resources/board.jpg").getImage();
+		img = new ImageIcon("resources/board.jpg").getImage();
 		status = white;
 
 	}

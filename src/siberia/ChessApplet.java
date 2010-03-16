@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class ChessApplet extends JApplet implements  Player, ActionListener {
+public class ChessApplet extends JFrame implements Player, ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLayeredPane layers;
@@ -13,8 +13,7 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 	private StatusPanel status;
 	private PlayerController pc;
 
-	@Override
-	public void init() {
+	public ChessApplet() {
 
 		setSize(544, 544);
 		pc = new PlayerController();
@@ -61,7 +60,6 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 
 	}
 
-	@Override
 	public void destroy() {
 	}
 
@@ -71,7 +69,7 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 		boolean garbled = pc.getBoard().isGarbled(move);
 		if (!garbled) {
 			int[][] movei = pc.getBoard().stringToMove(move);
-			String color = pc.getWhite().equals(this)?"white":"black";
+			String color = pc.getWhite().equals(this) ? "white" : "black";
 			boolean success = pc.getBoard().validateMove(movei[0], movei[1], color);
 			if (!success) {
 				JOptionPane.showMessageDialog(this, "You may be retarded, what makes you think that move is valid?");
@@ -83,7 +81,6 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 		}
 		dboard.update();
 	}
-
 
 	public void putMove(String move) {
 
@@ -106,5 +103,11 @@ public class ChessApplet extends JApplet implements  Player, ActionListener {
 			layers.setLayer(status, JLayeredPane.POPUP_LAYER);
 		}
 		status.update();
+	}
+
+	public static void main(String args[]) {
+		ChessApplet stupid = new ChessApplet();
+		stupid.setVisible(true);
+
 	}
 }
