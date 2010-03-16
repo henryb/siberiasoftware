@@ -1,6 +1,9 @@
 package siberia;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -74,6 +77,10 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 
 		jb.setBounds(300, 550, 300, 50);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+                public void windowClosing (WindowEvent e) { System.exit(0); }
+                });
 
 
 		this.addWindowListener(new WindowAdapter() {
@@ -105,6 +112,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 			JOptionPane.showMessageDialog(this, "Garbled");
 		}
 		dboard.update();
+		
 	}
 
 	public void putMove(String move) {
@@ -139,8 +147,13 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	}
 
 	public static void main(String args[]) {
-		ChessApplet stupid = new ChessApplet();
-		stupid.setVisible(true);
+		
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+        		ChessApplet stupid = new ChessApplet();
+        		stupid.setVisible(true);
+            }
+        });
 
 	}
 }
