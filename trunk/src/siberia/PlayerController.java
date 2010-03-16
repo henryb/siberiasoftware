@@ -14,7 +14,24 @@ public class PlayerController {
 		game.configureBoard();
 	}
 
+	public void forfeit(Player p) {
+		Player op = (white.equals(p)) ? black : white;
+		p.gameOver(false);
+		op.gameOver(true);
+		over();
+	}
+
 	public void makeMove(Player p, String move) {
+
+		if (move.equals("1 1 1 1") || move.equals("2 2 2 2")) {
+			//forfeit
+			Player op = (white.equals(p)) ? black : white;
+			boolean pwin = move.equals("1 1 1 1") ? false : true;
+			op.gameOver(!pwin);
+			over();
+		}
+
+
 		if (over) {
 			return;
 		}
@@ -22,12 +39,14 @@ public class PlayerController {
 		if (whiteToPlay && p.equals(white)) {
 			if (!game.isGarbled(move)) {
 
-				whiteToPlay = !whiteToPlay;
+				whiteToPlay = false;
 				game.decodeMove(move);
 				black.putMove(move);
 				game.printBoard();
 				if (game.isThereCheck("black") && game.isThereCheckMate("black")) {
 					over = true;
+					white.gameOver(true);
+					black.gameOver(false);
 				}
 			} else {
 				System.err.println("Garbled move recieved: " + move);
@@ -35,12 +54,14 @@ public class PlayerController {
 		} else if (p.equals(black) && !whiteToPlay) {
 			if (!game.isGarbled(move)) {
 
-				whiteToPlay = !whiteToPlay;
+				whiteToPlay = true;
 				game.decodeMove(move);
 				white.putMove(move);
 				game.printBoard();
 				if (game.isThereCheck("white") && game.isThereCheckMate("white")) {
 					over = true;
+					white.gameOver(false);
+					black.gameOver(true);
 				}
 			} else {
 				System.err.println("Garbled move recieved: " + move);
@@ -52,8 +73,8 @@ public class PlayerController {
 		return game;
 	}
 
-	public void start(){
-		if(white != null && black != null){
+	public void start() {
+		if (white != null && black != null) {
 			white.gameStart();
 			black.gameStart();
 		}
@@ -89,11 +110,11 @@ public class PlayerController {
 		return black;
 	}
 
-	public void over(){
+	public void over() {
 		over = true;
 	}
 
-	public boolean isOver(){
+	public boolean isOver() {
 		return over;
 	}
 }
