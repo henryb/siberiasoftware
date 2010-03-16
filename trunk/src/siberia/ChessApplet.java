@@ -118,6 +118,11 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 			JOptionPane.showMessageDialog(this, "Game over?");
 			pc.makeMove(this, move);
 		}
+
+		String color = pc.getWhite().equals(this) ? "white" : "black";
+		if (pc.getBoard().isThereCheck(color)) {
+			JOptionPane.showMessageDialog(this, "You are in check");
+		}
 		dboard.update();
 	}
 
@@ -127,7 +132,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	}
 
 	public void gameStart() {
-		layers.setLayer(swp,new Integer(-9999));
+		layers.setLayer(swp, new Integer(-9999));
 	}
 
 	public void actionPerformed(ActionEvent e) {
