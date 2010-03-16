@@ -51,10 +51,11 @@ public class Rook extends ChessPiece {
 				testRow = testRow + RowIncr;
 				testCol = testCol + ColIncr;
 			}
-			if (testRow == next[0] && testCol == next[1]) {
+			if (testRow == next[0] && testCol == next[1]) {				
 				hasMoved = true;
+				return true;
 			}
-			return true;
+			
 		}
 		return false;
 	}
