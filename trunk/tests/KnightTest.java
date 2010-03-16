@@ -1,4 +1,4 @@
-package siberia.tests;
+
 
 import static org.junit.Assert.*;
 
@@ -6,17 +6,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import siberia.pieces.Bishop;
+import siberia.pieces.Knight;
 
-public class BishopTest {
-	
-	private Bishop subject;
+public class KnightTest {
+
+	private Knight subject;
 	private int[][] board_at_start;
 	private int[][] board_in_game;
 	
 	@Before
 	public void setUp() throws Exception {
-		subject = new Bishop("white", "tester");
+		subject = new Knight("white", "tester");
 		
 		board_at_start = new int[8][8];
 		
@@ -47,36 +47,47 @@ public class BishopTest {
 	}
 
 	@Test
-	public final void testVerify_move_invalid_jumping() {
+	public final void testVerify_move_valid() {
+		int[] position = {7,1};
+		int[] next = {5,0};
 		
-		int[] position = {7, 2};
-		int[] next = {5, 0};
+		assertTrue(subject.verify_move(board_at_start, position, next));
+	}
+
+	@Test
+	public final void testVerify_move_invalid_beyond_rules() {
+		int[] position = {7,1};
+		int[] next = {5,1};
 		
 		assertFalse(subject.verify_move(board_at_start, position, next));
 	}
 	
 	@Test
 	public final void testVerify_move_invalid_attacking_own_piece() {
-
-		int[] position = {7, 2};
-		int[] next = {6, 4};
+		int[] position = {7,1};
+		int[] next = {6,3};
 		
 		assertFalse(subject.verify_move(board_at_start, position, next));
 	}
 	
 	@Test
-	public final void testVerify_move_valid() {
-
-		int[] position = {7, 2};
-		int[] next = {5, 0};
-		
-		assertTrue(subject.verify_move(board_in_game, position, next));
+	public final void testGenericIsThereCheck() {
+		assertFalse(subject.isThereCheck(null, null));
 	}
-
 	
 	@Test
-	public final void testBishop() {
+	public final void testGenericIsThereCheckMate() {
+		assertFalse(subject.isThereCheckMate(null, null));
+	}
+	
+	@Test
+	public final void testGenericValidatePassant() {
+		assertFalse(subject.validate_passant(null, null, null, null));
+	}
+	
+	@Test
+	public final void testKnight() {
 		assertNotNull(subject);
 	}
-
+	
 }

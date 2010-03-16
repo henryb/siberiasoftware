@@ -1,7 +1,7 @@
 /**
  * 
  */
-package siberia.tests;
+
 
 import static org.junit.Assert.*;
 
