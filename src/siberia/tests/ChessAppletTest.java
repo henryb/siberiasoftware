@@ -2,6 +2,8 @@ package siberia.tests;
 
 import static org.junit.Assert.*;
 
+import java.awt.event.ActionEvent;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,9 +66,24 @@ public class ChessAppletTest {
 		assert(true);
 	}
 
-	@Test
+/*	@Test
 	public final void testReady() {
 		assertTrue(subject.ready());
+	}*/
+	
+	@Test
+	public final void testMain() {
+		subject.main(null);
+		assert(true);
+	}
+	
+	@Test
+	public final void testActionPerformed() {
+		subject.actionPerformed(new ActionEvent(this, 0, "somethingelse"));
+		subject.actionPerformed(new ActionEvent(this, 0, "status"));
+		subject.actionPerformed(new ActionEvent(this, 0, "status"));
+		subject.actionPerformed(new ActionEvent(this, 0, "somethingelse"));
+		assert(true);
 	}
 
 }

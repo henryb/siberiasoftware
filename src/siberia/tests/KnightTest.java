@@ -69,7 +69,22 @@ public class KnightTest {
 		
 		assertFalse(subject.verify_move(board_at_start, position, next));
 	}
-
+	
+	@Test
+	public final void testGenericIsThereCheck() {
+		assertFalse(subject.isThereCheck(null, null));
+	}
+	
+	@Test
+	public final void testGenericIsThereCheckMate() {
+		assertFalse(subject.isThereCheckMate(null, null));
+	}
+	
+	@Test
+	public final void testGenericValidatePassant() {
+		assertFalse(subject.validate_passant(null, null, null, null));
+	}
+	
 	@Test
 	public final void testKnight() {
 		assertNotNull(subject);

@@ -1,7 +1,6 @@
 package Network;
 
 import java.util.*;
-import java.io.*;
 
 import org.jivesoftware.smack.*;
 import org.jivesoftware.smack.filter.*;

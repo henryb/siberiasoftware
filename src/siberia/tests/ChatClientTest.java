@@ -3,6 +3,7 @@ package siberia.tests;
 import static org.junit.Assert.*;
 
 import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.packet.Message;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import Network.ChatClient;
 public class ChatClientTest {
 	
 	private ChatClient subject;
-	private ChatClient another;
+	private Message packet;
 
 	@Before
 	public void setUp() throws Exception {
@@ -33,19 +34,19 @@ public class ChatClientTest {
 	@Test
 	public final void testGetParter() {
 		String result = subject.getParter();
-		another = new ChatClient();
-		another.init();
-		assertNull(result);
-		try {
-			subject.login();
-			another.login();
-		}
-		catch (XMPPException e){
-			e.printStackTrace();
-		}
+		assertNull("ChatClient has a partner before init, how?", result);
+		
+		packet = new Message();
+		
+		packet.setFrom("siberiachess@duke.cs.drexel.edu/");
+	
+		subject.addListener(subject);
+		packet.setBody("rescuerangers");
+		subject.processPacket(packet);
+
 		result = subject.getParter();
-		another.disconnect();
-		assertNotNull(result);
+
+		assertNotNull("ChatClient didn't get a partner", result);
 	}
 
 	@Test
@@ -78,16 +79,20 @@ public class ChatClientTest {
 	@Test
 	public final void testWrite() {
 		assertFalse(subject.write("testing"));
-		another = new ChatClient();
-		another.init();
 		try {
 			subject.login();
-			another.login();
 		}
 		catch (XMPPException e){
 			e.printStackTrace();
 		}
-		another.disconnect();
+		
+		packet = new Message();
+		
+		packet.setFrom("siberiachess@duke.cs.drexel.edu/");
+	
+		subject.addListener(subject);
+		packet.setBody("rescuerangers");
+		subject.processPacket(packet);
 		assertTrue(subject.write("testing"));
 	}
 
@@ -99,7 +104,35 @@ public class ChatClientTest {
 
 	@Test
 	public final void testProcessPacket() {
-		fail("Not yet implemented"); // TODO
+		
+		packet = new Message();
+		packet.setFrom("nobody/");
+		packet.setBody("THE ONLY WINNING MOVE IS NOT TO PLAY");
+		subject.processPacket(packet);
+		
+		packet = new Message();
+		
+		packet.setFrom("siberiachess@duke.cs.drexel.edu/");
+		packet.setBody("POSITION:WHITE");
+		subject.processPacket(packet);
+		
+		subject.addListener(subject);
+		packet.setBody("rescuerangers");
+		subject.processPacket(packet);
+		
+		packet = new Message();
+		
+		packet.setFrom("siberiachess@duke.cs.drexel.edu/");
+		packet.setBody("PING");
+		subject.processPacket(packet);
+		
+		packet = new Message();
+		
+		packet.setFrom("rescuerangers@duke.cs.drexel.edu/");
+		packet.setBody("HOW ABOUT A NICE GAME OF CHESS");
+		subject.processPacket(packet);
+		
+		assert(true);
 	}
 
 	@Test

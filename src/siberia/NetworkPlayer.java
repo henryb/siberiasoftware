@@ -23,13 +23,15 @@ public class NetworkPlayer implements Player,MoveListener{
     public void putMove(String move) {
         cc.write(move);
     }
-    public boolean ready() {
+   
+    // ready() never gets called, so I'm commenting out for now - Henry
+ /*   public boolean ready() {
         if(cc.getParter() != null){
             return true;
         } else {
             return false;
         }
-    }
+    }*/
 
     public void move(String move) {
 		
