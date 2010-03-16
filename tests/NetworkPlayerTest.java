@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -13,7 +12,6 @@ public class NetworkPlayerTest {
 
 	private NetworkPlayer subject;
 	private PlayerController pc;
-
 
 	@Before
 	public void setUp() throws Exception {
@@ -36,18 +34,17 @@ public class NetworkPlayerTest {
 	public final void testPutMove() {
 		String move = "1 1 1 1";
 		subject.putMove(move);
-		assert(true);
+		assert (true);
 	}
 
-/*	@Test
+	/*	@Test
 	public final void testReady() {
-		assertFalse(subject.ready());
+	assertFalse(subject.ready());
 
-		ChessApplet heavyweight = new ChessApplet();
+	ChessApplet heavyweight = new ChessApplet();
 
-		assertTrue("NetworkPlayer not ready", subject.ready());
+	assertTrue("NetworkPlayer not ready", subject.ready());
 	}*/
-
 	@Test
 	public final void testMove_setPlayerWhite() {
 
@@ -56,17 +53,22 @@ public class NetworkPlayerTest {
 
 		String move = "POSITION:WHITE";
 		subject.move(move);
-		assert(true);
+		assert (true);
 
 	}
 
 	@Test
 	public final void testMove() {
-
+		subject.move(null);
 		String move = "1 1 1 1";
 		subject.move(move);
-		assert(true);
+		pc.addPlayer(subject);
+		subject.move(move);
+		pc.addPlayer(subject);
+		pc.start();
+		subject.move(move);
+		subject.move("2 2 2 2");
+		assert (true);
 
 	}
-
 }

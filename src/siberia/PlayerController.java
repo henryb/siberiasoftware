@@ -22,7 +22,8 @@ public class PlayerController {
 	}
 
 	public void makeMove(Player p, String move) {
-
+		if(p == null || move == null) return;
+		if(white == null || black == null) return;
 		if (move.equals("1 1 1 1") || move.equals("2 2 2 2")) {
 			//forfeit
 			Player op = (white.equals(p)) ? black : white;
