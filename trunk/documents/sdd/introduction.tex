@@ -1,0 +1,19 @@
+\section{Introduction}
+
+\subsection{Purpose}
+This document describes in detail the design and architecture of the AnonChess chess program being created by Siberia Software. As much detail as possible is given regarding how the design was created, what requirements it satisfies, and how it achieves its goals.
+AnonChess is a program built to allow remote users to play each other in chess through a web-based, anonymous system. Its main focus is just to let people play; as users log into the system they are paired with the first available player and can proceed. The program needs to be intuitive, reliable, and easy to use.
+
+\subsection{Scope}
+This document describes the design and architecture of AnonChess. This document's intended audience includes everyone working on (designing, developing, testing) AnonChess.
+\subsection{Definitions and Abbreviations}
+\begin{description}
+\item[Check] - A situation when a player's king is threatened with an opponent's piece.
+\item[Checkmate] - A situation when a player's king is threatened with an opponent's piece and there is no move that can mitigate this threat.
+\item[Chess] - A strategical game played on an 8x8 board with 6 types of pieces with varying movement abilities.
+\item[Chess move] - The movement of a chess piece in the game of chess.
+\item[Dialog box] - A simple Windows-style pop-over showing necessary information to the user in the GUI.
+\item[GUI] - 'graphical user interface', the part of the game that interfaces with the human player, shows him/her the board and other information, and accepts as input chess moves and other actions.
+\item[Opponent] - In terms of one person using the program (thus being the local player), the opponent is the other player which is communicated to via the program's network layer and a second GUI.
+\item[XMPP] - A messaging protocol primarily used for instant messaging that provides a reliable network layer for communications between two GUIs used by players.
+\end{description}
