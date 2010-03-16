@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class ChessApplet extends JFrame implements Player, ActionListener {
 
@@ -48,7 +50,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		jb = new JButton("Instructions");
 		jb.setBounds(600, 550, 300, 50);
 		jb.addActionListener(this);
-		
+
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
 		jb = new JButton("forfeit");
 		optionPane.setVisible(true);
@@ -72,6 +74,16 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 
 		jb.setBounds(300, 550, 300, 50);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
+
+
+		this.addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+
 
 	}
 
