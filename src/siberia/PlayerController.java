@@ -36,14 +36,12 @@ public class PlayerController {
 		if (over) {
 			return;
 		}
-		System.out.println(p.toString() + " " + move + " " + Boolean.toString(whiteToPlay));
 		if (whiteToPlay && p.equals(white)) {
 			if (!game.isGarbled(move)) {
 
 				whiteToPlay = false;
 				game.decodeMove(move);
 				black.putMove(move);
-				game.printBoard();
 				if (game.isThereCheck("black") && game.isThereCheckMate("black")) {
 					over = true;
 					white.gameOver(true);
@@ -58,7 +56,6 @@ public class PlayerController {
 				whiteToPlay = true;
 				game.decodeMove(move);
 				white.putMove(move);
-				game.printBoard();
 				if (game.isThereCheck("white") && game.isThereCheckMate("white")) {
 					over = true;
 					white.gameOver(false);

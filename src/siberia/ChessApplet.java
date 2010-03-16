@@ -20,7 +20,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 
 	public ChessApplet() {
 
-		setSize(800, 600);
+		setSize(600, 800);
 		pc = new PlayerController();
 		NetworkPlayer np = new NetworkPlayer(pc);
 		pc.addPlayer(this); //white
@@ -35,10 +35,10 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		dboard.setPreferredSize(new Dimension(544, 544));
 		dboard.setBounds(0, 0, 544, 544);
 		layers.add(dboard, JLayeredPane.DEFAULT_LAYER);
-		JButton jb = new JButton("display status panel");
+		JButton jb = new JButton("status panel");
 		jb.addActionListener(this);
 		jb.setActionCommand("status");
-		jb.setBounds(0, 550, 300, 50);
+		jb.setBounds(0, 550, 150, 50);
 		status = new StatusPanel(pc);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
 		layers.add(status, new Integer(-1));
@@ -51,7 +51,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		ip = new InstructionsPanel();
 		layers.add(ip, new Integer(-2));
 		jb = new JButton("Instructions");
-		jb.setBounds(600, 550, 300, 50);
+		jb.setBounds(150, 550, 150, 50);
 		jb.addActionListener(this);
 
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
@@ -76,7 +76,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 			}
 		});
 
-		jb.setBounds(300, 550, 300, 50);
+		jb.setBounds(300, 550, 150, 50);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
 
 
