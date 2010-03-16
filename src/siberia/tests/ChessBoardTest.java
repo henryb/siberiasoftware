@@ -43,7 +43,7 @@ public class ChessBoardTest {
 
 	@Test
 	public final void testGetPieceAt() {
-		ChessPiece piece = new King("white", "../resources/whiteking.jpg");
+		ChessPiece piece = new King("white", "resources/whiteking.jpg");
 		assertEquals(piece.color, subject.getPieceAt(7, 4).color);
 		assertEquals(piece.getImage(), subject.getPieceAt(7, 4).getImage());
 	}
@@ -83,12 +83,12 @@ public class ChessBoardTest {
 
 	@Test
 	public final void testIsThereCheckMate_black() {
-		assertFalse("At start of game, black is in Checkmate", subject.isThereCheckMate("black"));
+		assertFalse("At start of game, black is in Checkmate", subject.isThereCheck("black") &&  subject.isThereCheckMate("black"));
 	}
 	
 	@Test
 	public final void testIsThereCheckMate_white() {
-		assertFalse("At start of game, white is in Checkmate", subject.isThereCheckMate("white"));
+		assertFalse("At start of game, white is in Checkmate", subject.isThereCheck("white") && subject.isThereCheckMate("white"));
 	}
 
 	@Test
