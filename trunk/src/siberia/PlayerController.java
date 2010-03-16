@@ -26,7 +26,7 @@ public class PlayerController {
 				game.decodeMove(move);
 				black.putMove(move);
 				game.printBoard();
-				if (game.isThereCheckMate("black")) {
+				if (game.isThereCheck("black") && game.isThereCheckMate("black")) {
 					over = true;
 				}
 			} else {
@@ -39,7 +39,7 @@ public class PlayerController {
 				game.decodeMove(move);
 				white.putMove(move);
 				game.printBoard();
-				if (game.isThereCheckMate("white")) {
+				if (game.isThereCheck("white") && game.isThereCheckMate("white")) {
 					over = true;
 				}
 			} else {
