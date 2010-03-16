@@ -136,18 +136,6 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 
 	}
 
-	public static void main(String args[]) throws XMPPException {
-		ChatClient c = new ChatClient();
-
-		// provide your login information here
-		c.init();
-		c.addListener(c);
-		boolean write = false;
-		while (true) {
-			write = c.write("MOVEMOVEMOVE");
-		}
-
-	}
 
 	@Override
 	public void move(String move) {
