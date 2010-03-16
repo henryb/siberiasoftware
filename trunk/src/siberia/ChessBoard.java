@@ -197,7 +197,7 @@ public class ChessBoard {
 			test_board[next[0]][next[1]] = pieceID;
 			test_board[current[0]][current[1]] = 0;
 			
-			if(color == "white")			
+			if(color.equals("white"))
 				return gamePieces[1].isThereCheck(test_board, WKingPos);
 			else 
 				return gamePieces[8].isThereCheck(test_board, BKingPos);	
@@ -208,7 +208,7 @@ public class ChessBoard {
 		// Set 'color' argument to "white" to see if White King is threatened, set to "black" to see if Black King is threatened
 		public boolean isThereCheck(String color){
 			
-			if(color == "white")			
+			if(color.equals("white"))
 				return gamePieces[1].isThereCheck(board, WKingPos);
 			else 
 				return gamePieces[8].isThereCheck(board, BKingPos);			
@@ -219,7 +219,7 @@ public class ChessBoard {
 		// Set 'color' argument to "white" to see if White King is threatened, set to "black" to see if Black King is threatened
 		public boolean isThereCheckMate(String color){
 			
-			if(color == "white")
+			if(color.equals("white"))
 				return gamePieces[1].isThereCheckMate(board, WKingPos);			
 			else
 				return gamePieces[8].isThereCheckMate(board, BKingPos);			
