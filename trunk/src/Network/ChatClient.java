@@ -95,7 +95,7 @@ public class ChatClient implements MessageListener, PacketListener, MoveListener
 			} else {
 				if (!m.getBody().equals("POSITION:WHITE")) {
 					this.partner = m.getBody() + "@duke.cs.drexel.edu";
-					System.err.println("Partner is now: " + partner);
+				//	System.err.println("Partner is now: " + partner);
 					try {
 						this.sendMessage("Hey I can talk to you", this.partner);
 					} catch (XMPPException e) {
