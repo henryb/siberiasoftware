@@ -43,4 +43,9 @@ public class NetworkPlayer implements Player,MoveListener{
 			pc.makeMove(this, move);
 		}
     }
+
+	public void gameOver(boolean win) {
+
+		putMove((win)?"1 1 1 1":"2 2 2 2");
+	}
 }

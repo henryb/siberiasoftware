@@ -66,10 +66,11 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 				int x = JOptionPane.showConfirmDialog(f, "Are you sure you wish to forfeit the game?");
 				if (x == 0) {
 					// confirm forfeit
-					pc.makeMove(f, "1 1 1 1");
-					pc.over();
+					pc.forfeit(f);
+					//pc.makeMove(f, "1 1 1 1");
+					//pc.over();
 				} else {
-					JOptionPane.showMessageDialog(f, "You may be able to still win this, if your name is Kasparov");
+				//	JOptionPane.showMessageDialog(f, "You may be able to still win this, if your name is Kasparov");
 				}
 			}
 		});
@@ -113,17 +114,11 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	}
 
 	public void putMove(String move) {
-
-		if (move.equals("1 1 1 1")) {
-			JOptionPane.showMessageDialog(this, "Game over?");
-			pc.makeMove(this, move);
-		}
-
+		dboard.update();
 		String color = pc.getWhite().equals(this) ? "white" : "black";
 		if (pc.getBoard().isThereCheck(color)) {
 			JOptionPane.showMessageDialog(this, "You are in check");
 		}
-		dboard.update();
 	}
 
 	public boolean ready() {
@@ -162,5 +157,14 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 			}
 		});
 
+	}
+
+	public void gameOver(boolean win) {
+		dboard.update();
+		if(win){
+			JOptionPane.showMessageDialog(this, "Congrats, you win");
+		} else {
+			JOptionPane.showMessageDialog(this, "You have lost");
+		}
 	}
 }
