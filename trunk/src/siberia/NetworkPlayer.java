@@ -14,6 +14,7 @@ import Network.*;
 public class NetworkPlayer implements Player,MoveListener{
     private ChatClient cc;
     private PlayerController pc;
+	boolean gamestart = false;
     public NetworkPlayer(PlayerController pc){
         cc = new ChatClient();
         cc.init();
@@ -25,7 +26,7 @@ public class NetworkPlayer implements Player,MoveListener{
     }
    
    public void gameStart(){
-	   
+	   gamestart = true;
    }
    public boolean ready() {
         if(cc.getParter() != null){
@@ -36,11 +37,13 @@ public class NetworkPlayer implements Player,MoveListener{
     }
 
     public void move(String move) {
-		
+		if(move == null) return;
 		if(move.equals("POSITION:WHITE")){
 			pc.setWhitePlayer(this);
 		} else {
-			pc.makeMove(this, move);
+			if(gamestart){
+				pc.makeMove(this, move);
+			}
 		}
     }
 

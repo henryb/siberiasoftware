@@ -26,6 +26,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		pc.addPlayer(this); //white
 		pc.addPlayer(np); // black
 
+
 		layers = new JLayeredPane();
 		this.getContentPane().add(layers);
 
