@@ -64,12 +64,14 @@ public class PlayerController {
 		if (x == null) {
 			return;
 		}
-		if (white != null && black != null && black.equals(x)) {
-			black = white;
-			white = x;
+		if (white != null && black != null) {
+			if (black.equals(x)) {
+				black = white;
+				white = x;
+			}
+			white.putMove("");
+			black.putMove("");
 		}
-		white.putMove("");
-		black.putMove("");
 	}
 
 	public Player getWhite() {
