@@ -12,6 +12,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	private DisplayBoard dboard;
 	private StatusPanel status;
 	private PlayerController pc;
+	private InstructionsPanel ip;
 
 	public ChessApplet() {
 
@@ -31,6 +32,7 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 		layers.add(dboard, JLayeredPane.DEFAULT_LAYER);
 		JButton jb = new JButton("display status panel");
 		jb.addActionListener(this);
+		jb.setActionCommand("status");
 		jb.setBounds(0, 550, 300, 50);
 		status = new StatusPanel(pc);
 		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
@@ -39,13 +41,24 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 				"Are you sure you wish to forfeit the game?\n",
 				JOptionPane.QUESTION_MESSAGE,
 				JOptionPane.YES_NO_OPTION);
+
+
+		ip = new InstructionsPanel();
+		layers.add(ip, new Integer(-2));
+		jb = new JButton("Instructions");
+		jb.setBounds(600, 550, 300, 50);
+		jb.addActionListener(this);
+		
+		layers.add(jb, JLayeredPane.DEFAULT_LAYER);
 		jb = new JButton("forfeit");
 		optionPane.setVisible(true);
 		final ChessApplet f = this;
 		jb.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if(pc.isOver()) return;
+				if (pc.isOver()) {
+					return;
+				}
 				int x = JOptionPane.showConfirmDialog(f, "Are you sure you wish to forfeit the game?");
 				if (x == 0) {
 					// confirm forfeit
@@ -97,12 +110,20 @@ public class ChessApplet extends JFrame implements Player, ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (layers.getLayer(status) > layers.getLayer(dboard)) {
-			layers.setLayer(status, new Integer(-1));
+		if (e.getActionCommand().equals("status")) {
+			if (layers.getLayer(status) > layers.getLayer(dboard)) {
+				layers.setLayer(status, new Integer(-1));
+			} else {
+				layers.setLayer(status, JLayeredPane.POPUP_LAYER);
+			}
+			status.update();
 		} else {
-			layers.setLayer(status, JLayeredPane.POPUP_LAYER);
+			if (layers.getLayer(ip) > layers.getLayer(dboard)) {
+				layers.setLayer(ip, new Integer(-1));
+			} else {
+				layers.setLayer(ip, JLayeredPane.POPUP_LAYER);
+			}
 		}
-		status.update();
 	}
 
 	public static void main(String args[]) {
